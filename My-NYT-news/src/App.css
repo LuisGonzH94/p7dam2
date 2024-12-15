@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,117 @@
 
 .read-the-docs {
   color: #888;
+} */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Dando estilo al header */
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: white;
+  box-shadow: 0 0 10px lightgray;
+}
+
+.navbar {
+  background-color: #ffffff;
+  padding: 1rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  font-size: medium;
+  color: black;
+  text-decoration: none;
+}
+
+/* Dando estilo al Home page */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h3 {
+  margin: 0.5rem 0;
+}
+
+.card a {
+  color: blue;
+  text-decoration: none;
+}
+
+/* Dando estilo a la Categoria */
+h1 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Dando estilo al articulo por id */
+.article-container {
+  padding: 1rem;
+}
+
+.article-container img {
+  width: 75%;
+  height: auto;
+  margin: 1rem 0;
+  padding-left: 15%;
+}
+.article-container .body {
+  width: 75%;
+  text-align: justify;
+  margin: 1rem 0;
+  padding-left: 15%;
+}
+
+.related-articles {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.abstract {
+  text-align: left;
+}
+
+.related-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.related-card h4 {
+  margin: 0.5rem 0;
+}
+
+.related-card a {
+  color: blue;
+  text-decoration: none;
 }
