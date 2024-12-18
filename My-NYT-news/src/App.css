@@ -55,6 +55,7 @@ body {
   padding: 16px;
   background-color: white;
   box-shadow: 0 0 10px lightgray;
+
 }
 
 .navbar {
@@ -70,6 +71,8 @@ body {
   padding: 0;
   margin: 0;
   flex-wrap: wrap;
+  padding-bottom: .625rem;
+  border-bottom: 4px double black;
 }
 
 .navbar a {

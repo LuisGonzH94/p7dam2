@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import SearchDialog from './components/SearchDialog';
 
+import './assets/chomsky-webfont/style.css';
+
 function Header() {
     return (
         <header>
@@ -10,7 +12,7 @@ function Header() {
                 <span>{new Date().toLocaleDateString()}</span>
                 <p>Today's Paper</p>
                 </div>
-                <h1>New York Times</h1>
+                <h1 style={{fontFamily: "Chomsky Regular", fontSize: "3.5rem", letterSpacing: "2px", fontWeight: "500"}} >The New York Times</h1>
                 <DialogDisplay />
             </div>
             <Navbar />
