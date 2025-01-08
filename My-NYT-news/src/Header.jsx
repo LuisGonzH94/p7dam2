@@ -8,11 +8,20 @@ function Header() {
     return (
         <header>
             <div className="banner">
-                <div style={{lineHeight:'0.5'}}> 
-                <span>{new Date().toLocaleDateString()}</span>
-                <p>Today's Paper</p>
+                <div style={{ lineHeight: '0.5' }}>
+                    <span>{new Date().toLocaleDateString()}</span>
+                    <p>Today's Paper</p>
                 </div>
-                <h1 style={{fontFamily: "Chomsky Regular", fontSize: "3.5rem", letterSpacing: "2px", fontWeight: "500"}} >The New York Times</h1>
+                <h1
+                    style={{
+                        fontFamily: "Chomsky Regular",
+                        fontSize: "3.5rem",
+                        letterSpacing: "2px",
+                        fontWeight: "500",
+                    }}
+                >
+                    The New York Times
+                </h1>
                 <DialogDisplay />
             </div>
             <Navbar />

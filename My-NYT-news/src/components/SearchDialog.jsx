@@ -6,7 +6,7 @@ const SearchDialog = ({ onClose }) => {
 
     const handleSearch = () => {
         if (!query.trim()) return;
-        fetch(`https://news-foniuhqsba-uc.a.run.app/search?query=${query}`)
+        fetch(`https://news-foniuhqsba-uc.a.run.app/?${query}`)
             .then((response) => response.json())
             .then((data) => setResults(data))
             .catch((error) => console.error('Error fetching search results:', error));

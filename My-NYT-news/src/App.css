@@ -156,3 +156,88 @@ h1 {
   color: blue;
   text-decoration: none;
 }
+
+/* General dialog styling */
+dialog {
+  width: 50%; /* Anchura del modal */
+  max-width: 600px; /* Anchura máxima en dispositivos grandes */
+  margin: auto; /* Centrado horizontal */
+  border: none;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* Centrado en la pantalla */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro tras el modal */
+}
+
+/* Botón de cierre */
+.search-dialog-content .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Estilo de la barra de búsqueda */
+.search-dialog-content input[type="text"] {
+  width: calc(100% - 2rem);
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Botón de búsqueda */
+.search-dialog-content button {
+  display: block;
+  margin: 0.5rem auto;
+  padding: 0.5rem 1rem;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.search-dialog-content button:hover {
+  background-color: #0056b3;
+}
+
+/* Contenedor de resultados */
+.search-dialog-content .results {
+  max-height: 300px; /* Limita la altura del contenedor */
+  overflow-y: auto; /* Habilita el scroll en caso de desbordamiento */
+  margin-top: 1rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+/* Cada resultado */
+.search-dialog-content .result-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.search-dialog-content .result-item:last-child {
+  border-bottom: none;
+}
+
+.search-dialog-content .result-item h4 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+.search-dialog-content .result-item p {
+  font-size: 0.9rem;
+  color: #555;
+}
