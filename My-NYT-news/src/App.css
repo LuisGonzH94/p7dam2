@@ -1,45 +1,3 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -54,8 +12,16 @@ body {
   align-items: center;
   padding: 16px;
   background-color: white;
-  box-shadow: 0 0 10px lightgray;
+}
 
+.banner h1 {
+  font-size: 3.5rem;
+}
+
+.date {
+  font-size: .75rem;
+  color: #595757;
+  line-height: 1.5;
 }
 
 .navbar {
@@ -66,7 +32,7 @@ body {
 .navbar ul {
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   padding: 0;
   margin: 0;
@@ -81,6 +47,14 @@ body {
   text-decoration: none;
 }
 
+.navbar a:hover {
+  background-color: #555;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
 /* Dando estilo al Home page */
 .grid {
   display: grid;
@@ -91,17 +65,26 @@ body {
 
 .card {
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10pt;
   padding: 1rem;
 }
 
 .card img {
   width: 100%;
-  height: auto;
+  height: 50vh;
+  border-top-left-radius: 5pt;
+  border-top-right-radius: 5pt;
 }
 
 .card h3 {
   margin: 0.5rem 0;
+}
+
+.card p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .card a {
@@ -121,11 +104,15 @@ h1 {
 }
 
 .article-container img {
-  width: 75%;
+  width: 100%;
+  /* Imagen ajustada al contenedor */
+  max-width: 750px;
+  /* Límites para pantallas grandes */
   height: auto;
   margin: 1rem 0;
   padding-left: 15%;
 }
+
 .article-container .body {
   width: 75%;
   text-align: justify;
@@ -157,13 +144,25 @@ h1 {
   text-decoration: none;
 }
 
+.search-btn {
+  border: none;
+  background-color: #fff;
+  font-size: large;
+  opacity: .8;
+  cursor: pointer;
+}
+
 /* General dialog styling */
 dialog {
-  width: 50%; /* Anchura del modal */
-  max-width: 600px; /* Anchura máxima en dispositivos grandes */
-  margin: auto; /* Centrado horizontal */
+  width: 50%;
+  /* Anchura del modal */
+  max-width: 600px;
+  /* Anchura máxima en dispositivos grandes */
+  margin: auto;
+  /* Centrado horizontal */
   border: none;
-  border-radius: 10px; /* Bordes redondeados */
+  border-radius: 10px;
+  /* Bordes redondeados */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
   position: relative;
@@ -171,7 +170,8 @@ dialog {
 
 /* Centrado en la pantalla */
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro tras el modal */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fondo oscuro tras el modal */
 }
 
 /* Botón de cierre */
@@ -183,7 +183,7 @@ dialog::backdrop {
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
-  color: #333;
+  color: #000000;
 }
 
 /* Estilo de la barra de búsqueda */
@@ -201,22 +201,25 @@ dialog::backdrop {
   display: block;
   margin: 0.5rem auto;
   padding: 0.5rem 1rem;
-  background-color: #007BFF;
+  /* background-color: #007BFF; */
   color: #fff;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: .5rem;
   cursor: pointer;
 }
 
 .search-dialog-content button:hover {
-  background-color: #0056b3;
+  background-color: #880f0f;
+  color: #ffffff;
 }
 
 /* Contenedor de resultados */
 .search-dialog-content .results {
-  max-height: 300px; /* Limita la altura del contenedor */
-  overflow-y: auto; /* Habilita el scroll en caso de desbordamiento */
+  max-height: 300px;
+  /* Limita la altura del contenedor */
+  overflow-y: auto;
+  /* Habilita el scroll en caso de desbordamiento */
   margin-top: 1rem;
   border-top: 1px solid #ddd;
   padding-top: 1rem;
@@ -252,16 +255,161 @@ dialog::backdrop {
 }
 
 .language-options button {
-  background-color: #007bff;
+  background-color: #252728;
   color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 5px 5px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 10px;
   transition: background-color 0.3s ease;
 }
 
 .language-options button:hover {
   background-color: #0056b3;
+}
+
+/* Estilos para pantallas pequeñas (móvil) */
+@media (max-width: 768px) {
+  div h1 {
+    font-size: 1.75rem;
+    padding: .625rem;
+  }
+
+  div img {
+    width: 95%;
+    height: auto;
+    margin: .625rem;
+  }
+
+  div p {
+    padding: .625rem;
+    text-align: justify;
+  }
+
+  .card {
+    padding: 0.5rem;
+    /* Reducir padding */
+  }
+
+  .card p {
+    padding: 0;
+    text-align: left;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    /* Menú vertical */
+    border-bottom: none;
+    gap: 10px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    /* Una sola columna */
+    gap: 1rem;
+
+  }
+
+  .card img {
+    height: auto;
+    /* Ajustar altura automáticamente */
+  }
+
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .date {
+    line-height: 0;
+  }
+
+  .banner h1 {
+    font-size: 1.5rem
+  }
+
+  .article-container img {
+    width: 100%;
+    /* Imagen al 100% */
+    padding-left: 0;
+  }
+
+  .article-container .body {
+    width: 100%;
+    /* Texto al 100% */
+    padding-left: 0;
+  }
+
+  dialog {
+    width: 90%;
+    /* Ancho mayor para móvil */
+    max-width: 90%;
+  }
+
+  .language-options {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 3.125rem;
+    justify-content: center;
+  }
+}
+
+/* Estilos para pantallas medianas (tablets, laptops pequeñas) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* Dos columnas */
+    gap: 1rem;
+  }
+
+  .navbar ul {
+    justify-content: space-between;
+    /* Ajustar espaciado */
+  }
+
+  div img {
+    width: 95%;
+    height: auto;
+    margin: .625rem;
+ /* Lleva al centro horizontal */
+  }
+
+  div p {
+    padding: .625rem;
+    text-align: justify;
+  }
+
+  .card {
+    padding: 0.5rem;
+    /* Reducir padding */
+  }
+
+  .card p {
+    padding: 0;
+    text-align: left;
+  }
+}
+
+/* Estilos para pantallas grandes (desktops) */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* Tres columnas */
+  }
+
+  .navbar ul {
+    justify-content: space-evenly;
+    /* Espaciado uniforme */
+  }
+
+  .card {
+    padding: 0.5rem;
+    /* Reducir padding */
+  }
+
+  .card p {
+    padding: 0;
+    text-align: left;
+  }
 }

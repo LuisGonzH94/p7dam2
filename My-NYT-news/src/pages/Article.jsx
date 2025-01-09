@@ -20,7 +20,7 @@ const Article = () => {
     return (
         <div>
             <h1>{translation.headline || article.headline}</h1>
-            <img src={article.image_url} alt={translation.headline || article.headline} />
+            <img style={{maxWidth:'100%', height:'auto'}} src={article.image_url} alt={translation.headline || article.headline} />
             <p>{translation.body || article.body}</p>
         </div>
     );

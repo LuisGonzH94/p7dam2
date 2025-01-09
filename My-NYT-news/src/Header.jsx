@@ -19,10 +19,10 @@ function Header() {
         <header>
             <div className="banner">
                 <div style={{ lineHeight: '0.5' }}>
-                    <span>{formatDate(today, language)}</span>
-                    <p>Today's Paper</p>
+                    <span className="date">{formatDate(today, language)}</span>
+                    <p className="date">Today's Paper</p>
                 </div>
-                <h1 style={{ fontFamily: 'Chomsky Regular', fontSize: '3.5rem', letterSpacing: '2px', fontWeight: '500' }}>
+                <h1 style={{ fontFamily: 'Chomsky Regular', letterSpacing: '2px', fontWeight: '500' }}>
                     The New York Times
                 </h1>
                 <DialogDisplay />
@@ -38,7 +38,7 @@ function DialogDisplay() {
 
     return (
         <>
-            <button onClick={openDialog}>Search</button>
+            <button className="search-btn" onClick={openDialog}>🔍</button>
             <dialog id="search-dialog">
                 <SearchDialog onClose={closeDialog} />
             </dialog>

@@ -16,12 +16,12 @@ function App() {
       <div className="App">
           {/* Opciones de idioma */}
           <div className="language-options">
-              <button onClick={() => setLanguage('en')}>English</button>
-              <button onClick={() => setLanguage('es')}>Español</button>
-              <button onClick={() => setLanguage('fr')}>Français</button>
-              <button onClick={() => setLanguage('pt')}>Português</button>
-              <button onClick={() => setLanguage('it')}>Italiano</button>
-              <button onClick={() => setLanguage('ch')}>中文</button>
+              <button onClick={() => setLanguage('en')}>EN</button>
+              <button onClick={() => setLanguage('es')}>ES</button>
+              <button onClick={() => setLanguage('fr')}>FR</button>
+              <button onClick={() => setLanguage('pt')}>PT</button>
+              <button onClick={() => setLanguage('it')}>IT</button>
+              <button onClick={() => setLanguage('ch')}>CH</button>
           </div>
 
           {/* Cabecera */}
