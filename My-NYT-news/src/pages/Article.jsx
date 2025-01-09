@@ -11,11 +11,11 @@ const Article = () => {
       .then(response => response.json())
       .then(data => {
         setArticle(data);
-        fetch(`https://news-foniuhqsba-uc.a.run.app/${data.section}`)
+        fetch(`https://news-foniuhqsba-uc.a.run.app/${data.section}`) //Setting '/news'/{id} to display one article related to that 'data.section'.
           .then(response => response.json())
           .then(related => setRelatedArticles(related));
       });
-  }, [id]);
+  }, [id]); //[id], in this event, it will execute until both the article and related article with that 'id' match.
 
   if (!article) return <div>Loading...</div>;
   return (

@@ -13,7 +13,7 @@ const Home = () => {
         fetch('https://news-foniuhqsba-uc.a.run.app')
             .then(response => response.json())
             .then(data => setArticles(data));
-    }, []);
+    }, []); //the empty array means that this will only run once.
 
     return (
         <div>
