@@ -1,42 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 const Article = () => {
-  const { id } = useParams();
-  const [article, setArticle] = useState(null);
-  const [relatedArticles, setRelatedArticles] = useState([]);
+    const { id } = useParams();
+    const { language } = useLanguage();
+    const [article, setArticle] = useState(null);
 
-  useEffect(() => {
-    fetch(`https://news-foniuhqsba-uc.a.run.app/news/${id}`)
-      .then(response => response.json())
-      .then(data => {
-        setArticle(data);
-        fetch(`https://news-foniuhqsba-uc.a.run.app/${data.section}`) //Setting '/news'/{id} to display one article related to that 'data.section'.
-          .then(response => response.json())
-          .then(related => setRelatedArticles(related));
-      });
-  }, [id]); //[id], in this event, it will execute until both the article and related article with that 'id' match.
+    useEffect(() => {
+        fetch(`https://news-foniuhqsba-uc.a.run.app/news/${id}`)
+            .then((response) => response.json())
+            .then((data) => setArticle(data));
+    }, [id]);
 
-  if (!article) return <div>Loading...</div>;
-  return (
-    <div>
-      <div className="article-container">
-        <h1>{article.headline}</h1>
-        <img src={article.image_url} alt={article.headline} />
-        <p className='body'>{article.body}</p>
-        <h3>Related Articles</h3>
-        <div className="related-articles">
-          {relatedArticles.map(related => (
-            <div key={related.id} className="related-card">
-              <h4>{related.headline}</h4>
-              <p className='abstract'>{related.abstract}</p>
-              <a href={`/news/${related.id}`}>Read More</a>
-            </div>
-          ))}
+    if (!article) return <div>Loading...</div>;
+
+    const translation = article.translations[language] || {};
+
+    return (
+        <div>
+            <h1>{translation.headline || article.headline}</h1>
+            <img src={article.image_url} alt={translation.headline || article.headline} />
+            <p>{translation.body || article.body}</p>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Article;

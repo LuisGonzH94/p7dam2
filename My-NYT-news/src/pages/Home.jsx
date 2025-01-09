@@ -3,29 +3,34 @@
 
 "QUE SON LOS HOOKS: https://github.com/LuisGonzH94/desarrollo-interfaces/blob/main/02%20-%20React/06%20-%20Ciclo%20de%20vida.md"
 
+import { useLanguage } from '../context/LanguageContext';
 import React, { useState, useEffect } from 'react';
 
 //Building up the main page where the main news will be displayed.
 const Home = () => {
+    const { language } = useLanguage();
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
         fetch('https://news-foniuhqsba-uc.a.run.app')
-            .then(response => response.json())
-            .then(data => setArticles(data));
-    }, []); //the empty array means that this will only run once.
+            .then((response) => response.json())
+            .then((data) => setArticles(data));
+    }, []);
 
     return (
         <div>
             <div className="grid">
-                {articles.map(article => (
-                    <div key={article.id} className="card">
-                        <img src={article.image_url} alt={article.headline} /> 
-                        <h3>{article.headline}</h3>
-                        <p>{article.abstract}</p>
-                        <a href={`/news/${article.id}`}>Read More</a>
-                    </div>
-                ))}
+                {articles.map((article) => {
+                    const translation = article.translations[language] || {};
+                    return (
+                        <div key={article.id} className="card">
+                            <img src={article.image_url} alt={translation.headline || article.headline} />
+                            <h3>{translation.headline || article.headline}</h3>
+                            <p>{translation.abstract || article.abstract}</p>
+                            <a href={`/news/${article.id}`}>Read More</a>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );
